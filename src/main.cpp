@@ -21,12 +21,12 @@ MotorDC motorB(MOTOR_B1, MOTOR_B2);
 
 ros::NodeHandle nh;
 
-ros::Subscriber<std_msgs::Int16> motorASpeedSub("motor_a/motor_speed",
+ros::Subscriber<std_msgs::Int16> motorASpeedSub("motor_a/command",
     [](const std_msgs::Int16 &speed) {
         motorSpeedCallback(&motorA, speed);
     });
 
-ros::Subscriber<std_msgs::Int16> motorBSpeedSub("motor_b/motor_speed",
+ros::Subscriber<std_msgs::Int16> motorBSpeedSub("motor_b/command",
     [](const std_msgs::Int16 &speed) {
         motorSpeedCallback(&motorB, speed);
     });
