@@ -4,14 +4,13 @@
 
 class MotorDC {
 public:
-    MotorDC(int pinA, int pinB, bool use_softpwm = false);
+    MotorDC(int pinA, int pinB);
 
     void drive(int speed);
 
 private:
     int m_pinA;
     int m_pinB;
-    bool m_softpwm;
 };
 
 
