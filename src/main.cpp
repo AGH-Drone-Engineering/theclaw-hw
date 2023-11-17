@@ -15,22 +15,22 @@
 
 #include <MotorDC.h>
 
-#define MOTOR_A1 -1 // ?
-#define MOTOR_A2 -1 // ?
+#define MOTOR_A1 5
+#define MOTOR_A2 6
 
-#define ENCODER_A1 2 // ?
-#define ENCODER_A2 -1 // ?
+#define ENCODER_A1 2
+#define ENCODER_A2 4
 
-#define MOTOR_B1 -1  // ?
-#define MOTOR_B2 -1  // ?
+#define MOTOR_B1 9
+#define MOTOR_B2 10
 
-#define ENCODER_B1 3 // ?
-#define ENCODER_B2 -1 // ?
+#define ENCODER_B1 3
+#define ENCODER_B2 7
 
-#define ULTRASONIC_TRIG -1 // ?
-#define ULTRASONIC_ECHO -1 // ?
+#define ULTRASONIC_TRIG 8
+#define ULTRASONIC_ECHO 12
 
-#define GRIPPER_PIN -1 // ?
+#define GRIPPER_PIN 11
 
 static ros::NodeHandle nh;
 
