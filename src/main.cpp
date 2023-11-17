@@ -154,10 +154,14 @@ void setup()
 
     gripper.attach(GRIPPER_PIN);
     gripper.write(0);
+
+    pinMode(LED_BUILTIN, OUTPUT);
+    digitalWrite(LED_BUILTIN, LOW);
 }
 
 void loop()
 {
+    digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
     processUltrasonic();
     encoderA.process();
     encoderB.process();
