@@ -57,11 +57,9 @@ public:
         int32_t delta = encoder.readAndReset();
         pos += delta;
 
-        memset(&posMsg, 0, sizeof(posMsg));
         posMsg.data = pos;
         posPub.publish(&posMsg);
 
-        memset(&speedMsg, 0, sizeof(speedMsg));
         speedMsg.data = delta * 1000 / (now - lastRead);
         speedPub.publish(&speedMsg);
 
@@ -117,7 +115,8 @@ static ros::Publisher ultrasonicPub("ultrasonic", &ultrasonicMsg);
 
 static void processUltrasonic()
 {
-    memset(&ultrasonicMsg, 0, sizeof(ultrasonicMsg));
+    ultrasonicMsg.header.stamp = nh.now();
+    ultrasonicMsg.header.frame_id = "ultrasonic";
     ultrasonicMsg.radiation_type = sensor_msgs::Range::ULTRASOUND;
     ultrasonicMsg.field_of_view = 18.f / 180.f * M_PI;
     ultrasonicMsg.min_range = 0.f;
