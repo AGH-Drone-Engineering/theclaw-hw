@@ -8,7 +8,7 @@
 #include <Encoder.h>
 #include <ros.h>
 
-#include <std_msgs/Int8.h>
+#include <std_msgs/Int16.h>
 #include <std_msgs/UInt8.h>
 #include <std_msgs/Int32.h>
 #include <sensor_msgs/Range.h>
@@ -82,12 +82,12 @@ private:
 
 static MotorDC motorA(MOTOR_A1, MOTOR_A2);
 
-static void motorACmdCallback(const std_msgs::Int8 &command)
+static void motorACmdCallback(const std_msgs::Int16 &command)
 {
     motorA.drive(command.data);
 }
 
-static ros::Subscriber<std_msgs::Int8> motorACmdSub("motor_a/command", motorACmdCallback);
+static ros::Subscriber<std_msgs::Int16> motorACmdSub("motor_a/command", motorACmdCallback);
 
 // Encoder A
 
@@ -97,12 +97,12 @@ static EncoderManager encoderA(ENCODER_A1, ENCODER_A2, "motor_a/position", "moto
 
 static MotorDC motorB(MOTOR_B1, MOTOR_B2);
 
-static void motorBCmdCallback(const std_msgs::Int8 &command)
+static void motorBCmdCallback(const std_msgs::Int16 &command)
 {
     motorB.drive(command.data);
 }
 
-static ros::Subscriber<std_msgs::Int8> motorBCmdSub("motor_b/command", motorBCmdCallback);
+static ros::Subscriber<std_msgs::Int16> motorBCmdSub("motor_b/command", motorBCmdCallback);
 
 // Encoder B
 
