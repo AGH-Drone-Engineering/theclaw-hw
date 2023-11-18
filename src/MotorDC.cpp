@@ -3,9 +3,12 @@
 
 MotorDC::MotorDC(int pinA, int pinB)
     : m_pinA(pinA), m_pinB(pinB)
+{}
+
+void MotorDC::init()
 {
-    pinMode(pinA, OUTPUT);
-    pinMode(pinB, OUTPUT);
+    pinMode(m_pinA, OUTPUT);
+    pinMode(m_pinB, OUTPUT);
 }
 
 void MotorDC::drive(int speed)

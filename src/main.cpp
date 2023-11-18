@@ -141,7 +141,21 @@ static ros::Subscriber<std_msgs::UInt8> gripperCmdSub("gripper/command", gripper
 
 void setup()
 {
-    nh.getHardware()->setBaud(115200);
+    // pinMode(MOTOR_A1, OUTPUT);
+    // pinMode(MOTOR_A2, OUTPUT);
+
+    // pinMode(MOTOR_B1, OUTPUT);
+    // pinMode(MOTOR_B2, OUTPUT);
+
+    // digitalWrite(MOTOR_A1, HIGH);
+    // digitalWrite(MOTOR_A2, LOW);
+
+    // digitalWrite(MOTOR_B1, HIGH);
+    // digitalWrite(MOTOR_B2, LOW);
+
+    // for(;;);
+
+    // nh.getHardware()->setBaud(115200);
     nh.initNode();
 
     nh.subscribe(motorACmdSub);
@@ -152,16 +166,19 @@ void setup()
     encoderA.init();
     encoderB.init();
 
+    motorA.init();
+    motorB.init();
+
     gripper.attach(GRIPPER_PIN);
     gripper.write(0);
 
-    pinMode(LED_BUILTIN, OUTPUT);
-    digitalWrite(LED_BUILTIN, LOW);
+    // pinMode(LED_BUILTIN, OUTPUT);
+    // digitalWrite(LED_BUILTIN, LOW);
 }
 
 void loop()
 {
-    digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
+    // digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
     processUltrasonic();
     encoderA.process();
     encoderB.process();

@@ -6,6 +6,8 @@ class MotorDC {
 public:
     MotorDC(int pinA, int pinB);
 
+    void init();
+
     void drive(int speed);
 
 private:
