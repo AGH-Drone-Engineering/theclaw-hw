@@ -89,7 +89,7 @@ static ros::Subscriber<std_msgs::Int16> motorACmdSub("motor_a/command", motorACm
 
 // Encoder A
 
-static EncoderManager encoderA(ENCODER_A1, ENCODER_A2, "motor_a/position", "motor_a/speed");
+static EncoderManager encoderA(ENCODER_A1, ENCODER_A2, "motor_a/position", "motor_a/velocity");
 
 // Motor B
 
@@ -104,7 +104,7 @@ static ros::Subscriber<std_msgs::Int16> motorBCmdSub("motor_b/command", motorBCm
 
 // Encoder B
 
-static EncoderManager encoderB(ENCODER_B1, ENCODER_B2, "motor_b/position", "motor_b/speed");
+static EncoderManager encoderB(ENCODER_B1, ENCODER_B2, "motor_b/position", "motor_b/velocity");
 
 // Ultrasonic
 
