@@ -141,6 +141,7 @@ static ros::Subscriber<std_msgs::UInt8> gripperCmdSub("gripper/command", gripper
 
 void setup()
 {
+    nh.getHardware()->setBaud(115200);
     nh.initNode();
 
     nh.subscribe(motorACmdSub);
